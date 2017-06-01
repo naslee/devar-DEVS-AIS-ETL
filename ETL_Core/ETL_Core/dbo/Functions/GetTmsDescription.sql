@@ -1,0 +1,17 @@
+﻿CREATE FUNCTION dbo.GetTmsDescription (@tableType NVARCHAR(4), @tableCode NVARCHAR(16))
+RETURNS NVARCHAR(60)
+AS
+BEGIN
+  DECLARE @V_RETURN NVARCHAR(60);
+  SET @V_RETURN = (SELECT Z.ADV_SHORT_DESC
+					FROM AIS_Prod.ADVANCE.ZZ_ADV_TABLE Z
+					 WHERE Z.ADV_TABLE_TYPE = @tableType
+					 AND Z.ADV_TABLE_CODE = @tableCode
+					 AND Z.IS_ACTIVE = 1);
+RETURN(@V_RETURN);
+END;
+GO
+GRANT EXECUTE
+    ON OBJECT::[dbo].[GetTmsDescription] TO [devar-etl]
+    AS [dbo];
+

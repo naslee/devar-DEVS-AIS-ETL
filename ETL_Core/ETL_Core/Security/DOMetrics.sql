@@ -1,0 +1,3 @@
+﻿CREATE SCHEMA [DOMetrics]
+    AUTHORIZATION [dbo];
+
