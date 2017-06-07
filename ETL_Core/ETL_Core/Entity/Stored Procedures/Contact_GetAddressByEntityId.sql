@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [Entity].[Address_GetByEntityId]
+﻿CREATE PROCEDURE [Entity].[Contact_GetAddressByEntityId]
 	@ids [dbo].StringListTableType READONLY
 AS
 	
@@ -21,9 +21,12 @@ AS
 				SELECT DISTINCT i.entityId idNumber
 					, e.PREF_NAME_SORT SortName
 					, e.PREF_MAIL_NAME PrefName
+					, e.LAST_NAME LastName
+					, e.FIRST_NAME FirstName
 					, i.householdId
 					, spe.pref_mail_name SpousePrefName
 					, e.spouse_id_number SpouseIdNumber
+					, e.JNT_SALUTATION JointSalutation
 					, a.ValidAddressTypeCode ValidAddressType
 					, a.ValidStreet1
 					, a.ValidStreet2
@@ -85,6 +88,6 @@ AS
 RETURN 0;
 GO
 GRANT EXECUTE
-    ON OBJECT::[Entity].[Address_GetByEntityId] TO [devar-etl]
+    ON OBJECT::[Entity].[Contact_GetAddressByEntityId] TO [devar-etl]
     AS [dbo];
 

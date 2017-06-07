@@ -1,4 +1,5 @@
-﻿CREATE PROCEDURE [Entity].[Name_GetByEntityId]
+﻿
+CREATE PROCEDURE [Entity].[Name_GetByEntityId]
 	@ids [dbo].StringListTableType READONLY
 AS
 	
@@ -26,16 +27,24 @@ AS
 		 , job3.EmployerName Employer3
 		 , job3.JobTitle Title3
 		 , job3.EmployerUnit EmployerUnit3
-		 , job1.HasGreaterThan3Records MoreThan3Titles
+		 , case when job1.EmploymentRecordCount > 3 then 1 else 0 end MoreThan3Titles
+		 , a.COMPANY_NAME_1 EmployerAddress1
+		 , a.COMPANY_NAME_2 EmployerAddress2
+		 , a.BUSINESS_TITLE EmployerAddressTitle
+
 		FROM AIS_Prod.ADVANCE.ENTITY e
 			INNER JOIN @ids i 
 				ON i.item = e.ID_NUMBER
 			LEFT JOIN AIS_Prod.ADVANCE.NAME n 
 				ON e.ID_NUMBER = n.ID_NUMBER 
 				AND n.NAME_TYPE_CODE = 'NN'
-			outer apply Entity.fnEmployment_GetByEntityId(e.ID_NUMBER, 1) job1
-			outer apply Entity.fnEmployment_GetByEntityId(e.ID_NUMBER, 1) job2
-			outer apply Entity.fnEmployment_GetByEntityId(e.ID_NUMBER, 1) job3
+			LEFT OUTER JOIN AIS_Prod.ADVANCE.[ADDRESS] a
+				on a.ID_NUMBER = e.ID_NUMBER
+				and a.IS_ACTIVE = 1
+				and a.ADDR_TYPE_CODE = 'B'
+			outer apply Entity.Employment_GetActiveByEntityId(e.ID_NUMBER, 1) job1
+			outer apply Entity.Employment_GetActiveByEntityId(e.ID_NUMBER, 2) job2
+			outer apply Entity.Employment_GetActiveByEntityId(e.ID_NUMBER, 3) job3
 
 	    WHERE (n.ID_NUMBER IS NULL OR n.IS_ACTIVE = 1)
 			  AND e.IS_ACTIVE = 1;

@@ -63,19 +63,14 @@
     <Folder Include="performance\Tables\" />
     <Folder Include="log\" />
     <Folder Include="log\Tables\" />
-    <Folder Include="DOMetrics\" />
-    <Folder Include="DOMetrics\Tables\" />
-    <Folder Include="DOMetrics\Views\" />
     <Folder Include="Security\" />
     <Folder Include="dbo\Functions\" />
     <Folder Include="Entity\" />
     <Folder Include="Entity\Functions\" />
-    <Folder Include="DOMetrics\Functions\" />
     <Folder Include="performance\Stored Procedures\" />
     <Folder Include="imodules\" />
     <Folder Include="imodules\Stored Procedures\" />
     <Folder Include="Entity\Stored Procedures\" />
-    <Folder Include="DOMetrics\Stored Procedures\" />
     <Folder Include="advancement\" />
     <Folder Include="advancement\Stored Procedures\" />
     <Folder Include="dbo\User Defined Types\" />
@@ -84,46 +79,6 @@
     <Build Include="dbo\Tables\CoreConfiguration.sql" />
     <Build Include="performance\Tables\Activity.sql" />
     <Build Include="log\Tables\execution_history.sql" />
-    <Build Include="DOMetrics\Tables\Proposal.sql" />
-    <Build Include="DOMetrics\Tables\tempProposalExport.sql" />
-    <Build Include="DOMetrics\Tables\tempProspectExport.sql" />
-    <Build Include="DOMetrics\Tables\tempContactReportExport.sql" />
-    <Build Include="DOMetrics\Tables\tempMetricFactUpdate.sql" />
-    <Build Include="DOMetrics\Tables\UserFact.sql" />
-    <Build Include="DOMetrics\Tables\DeleteRecordsLog.sql" />
-    <Build Include="DOMetrics\Tables\FactCreateErrorLog.sql" />
-    <Build Include="DOMetrics\Tables\MetricFactUpdateBackup.sql" />
-    <Build Include="DOMetrics\Tables\MetricFact.sql" />
-    <Build Include="DOMetrics\Views\vPMRAssignedMissed.sql" />
-    <Build Include="DOMetrics\Views\vContactReportFact.sql" />
-    <Build Include="DOMetrics\Views\vDevofficerGoals.sql" />
-    <Build Include="DOMetrics\Views\vContactReportExport.sql" />
-    <Build Include="DOMetrics\Views\vGoodFaithEffortContactReport.sql" />
-    <Build Include="DOMetrics\Views\vPMRAssigned.sql" />
-    <Build Include="DOMetrics\Views\vDollarsRaisedMajorTest.sql" />
-    <Build Include="DOMetrics\Views\vAskMadeMajorContactReportsTest.sql" />
-    <Build Include="DOMetrics\Views\vPMRAssignedComplete.sql" />
-    <Build Include="DOMetrics\Views\vMetricFact.sql" />
-    <Build Include="DOMetrics\Views\vDollarsRaisedMajor.sql" />
-    <Build Include="DOMetrics\Views\vDollarsRaisedAnnualSpecial.sql" />
-    <Build Include="DOMetrics\Views\vProspectExport.sql" />
-    <Build Include="DOMetrics\Views\vFacultyInteractionContactReports.sql" />
-    <Build Include="DOMetrics\Views\vAssignmentContactsByContactType.sql" />
-    <Build Include="DOMetrics\Views\vFaceToFaceFacilitatedContactReports.sql" />
-    <Build Include="DOMetrics\Views\vFaceToFaceContactReports.sql" />
-    <Build Include="DOMetrics\Views\vAskMadeMajorContactReports.sql" />
-    <Build Include="DOMetrics\Views\vAskMadeAnnualSpecialContactReports.sql" />
-    <Build Include="DOMetrics\Views\vComprehensiveAskContactReports.sql" />
-    <Build Include="DOMetrics\Views\vUnitFact.sql" />
-    <Build Include="DOMetrics\Views\vFaceToFaceSubstantiveContactReports.sql" />
-    <Build Include="DOMetrics\Views\vUserFactUpdate.sql" />
-    <Build Include="DOMetrics\Views\vProposalExport.sql" />
-    <Build Include="DOMetrics\Views\vUserFact.sql" />
-    <Build Include="DOMetrics\Views\vPMRAssignedFaceToFace.sql" />
-    <Build Include="DOMetrics\Views\vPermissionsDefault.sql" />
-    <Build Include="DOMetrics\Views\vPermissionsAdmin.sql" />
-    <Build Include="DOMetrics\Views\vPermissionsDevofficer.sql" />
-    <Build Include="DOMetrics\Views\vMetricFactUpdate.sql" />
     <Build Include="Security\OU_DEV-SVC-SQLBackups.sql" />
     <Build Include="Security\dometrics-etl.sql" />
     <Build Include="Security\devar-reports.sql" />
@@ -159,30 +114,6 @@
     <Build Include="Entity\Functions\Contact_IsDoNotEmailInvite.sql" />
     <Build Include="Entity\Functions\Contact_IsDoNotEmailSolicit.sql" />
     <Build Include="Entity\Functions\Contact_IsDoNotInvite.sql" />
-    <Build Include="DOMetrics\Functions\AskMadeMajor_2017_TEST.sql" />
-    <Build Include="DOMetrics\Functions\GetUnitName.sql" />
-    <Build Include="DOMetrics\Functions\GetMaxContactByOutcomeForAssignment.sql" />
-    <Build Include="DOMetrics\Functions\GetMaxContactWithOutcomeForAssignment.sql" />
-    <Build Include="DOMetrics\Functions\GetFirstAMMContactReportForProposal.sql" />
-    <Build Include="DOMetrics\Functions\GetContactCountByAssignment.sql" />
-    <Build Include="DOMetrics\Functions\GetMaxDisqualifiedContactForAssignment.sql" />
-    <Build Include="DOMetrics\Functions\GetMaxQualifiedContactForAssignment.sql" />
-    <Build Include="DOMetrics\Functions\GetMaxContactForAssignment.sql" />
-    <Build Include="DOMetrics\Functions\FaceToFaceSubstantive_2017.sql" />
-    <Build Include="DOMetrics\Functions\ConfigurationGetFiscalYear.sql" />
-    <Build Include="DOMetrics\Functions\AskMadeAnnualSpecial_2017.sql" />
-    <Build Include="DOMetrics\Functions\AskMadeMajor_2017.sql" />
-    <Build Include="DOMetrics\Functions\ComprehensiveAsk_2017.sql" />
-    <Build Include="DOMetrics\Functions\FaceToFace_2017.sql" />
-    <Build Include="DOMetrics\Functions\FaceToFaceFacilitated_2017.sql" />
-    <Build Include="DOMetrics\Functions\GoalAskMadeAnnualSpecial_2017.sql" />
-    <Build Include="DOMetrics\Functions\GoalAskMadeMajor_2017.sql" />
-    <Build Include="DOMetrics\Functions\GoalComprehensiveAsk_2017.sql" />
-    <Build Include="DOMetrics\Functions\GoalDollarsRaised_2017.sql" />
-    <Build Include="DOMetrics\Functions\GoalFaceToFace_2017.sql" />
-    <Build Include="DOMetrics\Functions\GoalFacultyInteraction_2017.sql" />
-    <Build Include="DOMetrics\Functions\GoalPMRAssigned_2017.sql" />
-    <Build Include="DOMetrics\Functions\FacultyInteraction_2017.sql" />
     <Build Include="Entity\Functions\Contact_GetContactPreferenceSummary.sql" />
     <Build Include="Entity\Functions\Contact_GetValidAddressSummary.sql" />
     <Build Include="Entity\Functions\Employment_GetByEntityId.sql" />
@@ -193,10 +124,6 @@
     <Build Include="Entity\Stored Procedures\Name_GetByEntityId.sql" />
     <Build Include="Entity\Stored Procedures\Contact_GetAddressByEntityId.sql" />
     <Build Include="Entity\Stored Procedures\Contact_GetEmailByEntityId.sql" />
-    <Build Include="DOMetrics\Stored Procedures\FactDelete.sql" />
-    <Build Include="DOMetrics\Stored Procedures\Metric_GetTruthKey.sql" />
-    <Build Include="DOMetrics\Stored Procedures\FactUpdate.sql" />
-    <Build Include="DOMetrics\Stored Procedures\FactCreate.sql" />
     <Build Include="advancement\Stored Procedures\Allocation_GetByCode.sql" />
     <Build Include="advancement\Stored Procedures\Allocation_GetAll.sql" />
     <Build Include="advancement\Stored Procedures\Appeal_GetByCode.sql" />
@@ -208,5 +135,18 @@
     <Build Include="Security\DRO.sql" />
     <Build Include="Security\DOMetrics.sql" />
     <Build Include="Security\advancement.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <ArtifactReference Include="$(DacPacRootPath)\Extensions\Microsoft\SQLDB\Extensions\SqlServer\130\SqlSchemas\master.dacpac">
+      <HintPath>$(DacPacRootPath)\Extensions\Microsoft\SQLDB\Extensions\SqlServer\130\SqlSchemas\master.dacpac</HintPath>
+      <SuppressMissingDependenciesErrors>True</SuppressMissingDependenciesErrors>
+      <DatabaseVariableLiteralValue>AIS_Prod</DatabaseVariableLiteralValue>
+    </ArtifactReference>
+  </ItemGroup>
+  <ItemGroup>
+    <SqlCmdVariable Include="AIS_Prod">
+      <DefaultValue>AIS_Prod</DefaultValue>
+      <Value>$(SqlCmdVar__1)</Value>
+    </SqlCmdVariable>
   </ItemGroup>
 </Project>

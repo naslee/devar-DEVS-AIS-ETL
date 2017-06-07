@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [Entity].[Email_GetByEntityId]
+﻿CREATE PROCEDURE [Entity].[Contact_GetEmailByEntityId]
 	@ids [dbo].StringListTableType READONLY
 AS
 	
@@ -14,6 +14,8 @@ AS
 		--return email addresses
 		SELECT i.item IdNumber
 			 , e.pref_name_sort SortName
+			 , e.FIRST_NAME FirstName
+			 , e.LAST_NAME LastName
 			 , [Entity].[GetEmailAddress](e.ID_NUMBER) EmailAddress
 			 , [Entity].[IsDoNotContact](e.ID_NUMBER) DoNotContact
 			 , [Entity].[IsDoNotSolicit](e.ID_NUMBER) DoNotSolicit
@@ -40,6 +42,6 @@ AS
 RETURN 0;
 GO
 GRANT EXECUTE
-    ON OBJECT::[Entity].[Email_GetByEntityId] TO [devar-etl]
+    ON OBJECT::[Entity].[Contact_GetEmailByEntityId] TO [devar-etl]
     AS [dbo];
 
